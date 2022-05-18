@@ -203,6 +203,20 @@ function MaterialBottomTabViewInner({
           preventDefault();
         }
       }}
+      // @ts-ignore (depends on react-native-paper typing which will be altered later)
+      onTabLongPress={({ route, preventDefault }) => {
+        const event = navigation.emit({
+          type: 'tabLongPress',
+          target: route.key,
+          // @ts-ignore (depends on react-native-paper typing which will be altered later)
+          canPreventDefault: true,
+        });
+
+        // @ts-ignore (depends on react-native-paper typing which will be altered later)
+        if (event.defaultPrevented) {
+          preventDefault();
+        }
+      }}
       safeAreaInsets={insets}
     />
   );

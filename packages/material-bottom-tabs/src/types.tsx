@@ -14,6 +14,10 @@ export type MaterialBottomTabNavigationEventMap = {
    * Event which fires on tapping on the tab in the tab bar.
    */
   tabPress: { data: undefined; canPreventDefault: true };
+  /**
+   * Event which fires on long pressing the tab in the tab bar.
+   */
+  tabLongPress: { data: undefined; canPreventDefault: false };
 };
 
 export type MaterialBottomTabNavigationHelpers = NavigationHelpers<
@@ -106,6 +110,7 @@ export type MaterialBottomTabNavigationConfig = Partial<
     | 'navigationState'
     | 'onIndexChange'
     | 'onTabPress'
+    | 'onTabLongPress'
     | 'renderScene'
     | 'renderLabel'
     | 'renderIcon'
